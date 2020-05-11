@@ -7,7 +7,7 @@ import { DeletarComponent } from './deletar/deletar.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: "homr", pathMatch: 'full' },
+  { path: '', redirectTo: "home", pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'loja', component: LojaComponent },
   { path: 'editar/:id', component: EditarComponent },
