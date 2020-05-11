@@ -1,0 +1,16 @@
+.fundo{
+    padding: 0px;
+ 
+   background-image: url('https://www.falamart.com.br/wp-content/uploads/2019/09/prateleira-hortifruti-atacado-1024x768.jpg');
+
+}
+
+h1,p{
+    color: #ffffff;
+}
+
+.sombra{
+    background-color: rgba(0, 0, 0, .6);
+    padding: 10px;
+    
+}

@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <h1 class="d-flex justify-content-center">Cadastre um produto</h1>
+
+    <div class="form-grup">
+        <label for="nome" class="text-monospace">Nome:</label>
+        <input type="text" name="nome" id="nome" class="form-control text-monospace" placeholder="Digite aqui o nome"
+            [(ngModel)]="produto.nome">
+    </div>
+
+    <div class="form-grup">
+        <label for="preco" class="text-monospace">Preço:</label>
+        <input type="number" name="preco" id="peco" class="form-control text-monospace"
+            placeholder="Digite aqui o preço" [(ngModel)]="produto.preco">
+    </div>
+
+    <div class="form-grup">
+        <label for="imagem" class="text-monospace">Imagem:</label>
+        <input type="text" name="imagem" id="imagem" class="form-control text-monospace"
+            placeholder="Digite aqui a URL da imagem" [(ngModel)]="produto.imagem">
+    </div>
+
+    <div class="form-grup">
+        <label for="qtdEstoque" class="text-monospace">Quantidade em estoque:</label>
+        <input type="number" name="qtdEstoque" id="qtdEstoque" class="form-control text-monospace"
+            placeholder="Digite aqui a quantidade em estoque" [(ngModel)]="produto.qtdEstoque">
+    </div>
+
+    <div class="d-flex justify-content-end mt-3">
+        <button type="button" class="btn btn-outline-info w-25" (click)="cadastrar()">Cadastrar</button>
+    </div>
+</div>
+
+<div class="container d-flex flex-wrap mt-5">
+    <div class="card mb-5 mr-4 ml-4" style="width: 20rem;" *ngFor="let produto of listaProdutos">
+        <div class="card-body">
+            <img class="card-img-top" src="{{produto.imagem}}" alt="Imagem do produto">
+            <h5 class="card-title">{{produto.nme}}</h5>
+            <p class="card-text">Codigo: {{produto.id}}</p>
+            <p class="card-text">peço: R{{produto.preco}}</p>
+            <p class="card-text">Qontidade nem estoque: {{produto.qtdEstoque}}</p>
+            <div class="d-flex justify-content-end">
+                <button class="mr3 btn btn-outline-info" [routerLink]="['/editar',produto.id]"> Editar</button>
+                <button class="mr3 btn btn-outline-danger ml-3" [routerLink]="['/deletar',produto.id]"> Excluir</button>
+
+            </div>
+        </div>
+    </div>
+</div>
